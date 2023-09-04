@@ -6,7 +6,7 @@ export default function Cards() {
         <div className="px-16 py-6 bg-gray-100 col-span-2">
             <main>
                 <div class="text-red-600 flex justify-end">
-                    <a href="#" class="btn">Log in</a>
+                    <a href="#" class="btn ">Log in</a>
                     <a href="#" class="ml-2 btn ">Sign up</a>
                 </div>
                 <header>
@@ -51,8 +51,8 @@ export default function Cards() {
             <div className="mt-8">
                 {/* Add your most popular recipes here */}
             </div>
-            <div>
-                <div>
+            <div class="flex justify-center">
+                <div class=" btn max-w-fit hover:shadow-inner">
                     Load more
                 </div>
             </div>
