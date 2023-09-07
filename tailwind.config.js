@@ -5,9 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      color:
+      fontFamily:
       {
-
+body:['Handlee']
       }
     },
   },
