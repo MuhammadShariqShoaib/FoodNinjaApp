@@ -1,10 +1,8 @@
 import './App.css';
-import Navbar from './component/Navbar';
 import Login from './component/Login';
 import Signup from './component/Signup';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from './component/About';
-import Menu from './component/Menu';
 import Interface from './component/Interface';
 import Contact from './component/Contact';
 
