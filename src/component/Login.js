@@ -1,43 +1,54 @@
-import React, { useState } from 'react';
-import { nav } from '../data';
+import React from 'react'
 import { Link } from 'react-router-dom';
+import { form } from '../data';
 
-export default function Navbar() {
-    const [activeLink, setActiveLink] = useState('Home');
 
-    const handleClick = (title) => {
-        setActiveLink(title);
-        alert(title);
-    };
-
+export default function Login() {
     return (
-        <div>
-            <div>
-                <h3 className="font-bold md:flex md:justify-end uppercase p-4 border-b border-gray-100">
-                    <a href="/" className="hover:text-gray-600">Food Ninja</a>
-                </h3>
+
+        <div class=" flex justify-center items-center min-h-screen bg-gray-200">
+
+
+            <div className="bg-white p-8 rounded shadow-md">
+                <div className='text-center'>
+                    <h1 className="text-4xl font-semibold " >ping pong</h1>
+                    <hr className="my-4 border-t-2 border-gray-300" />
+                </div>
+
+                <div className="text-center mb-6">
+                    <h2 className="text-2xl  font-semibold">Welcome Back!</h2>
+                </div>
+
+                <form className="space-y-4">
+                    {form.filter(user => user.id === 2 || user.id === 3).map((user) => (
+                        <div>
+                            <input
+                                key={user.key}
+                                type={user.type}
+                                class="inp"
+                                placeholder={user.placeholder}
+                            />
+                        </div>
+                    ))}
+
+                    <button
+                        type="submit"
+                        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 focus:outline-none"
+                    >
+                        Login
+                    </button>
+                </form>
+                <div className="mt-6 flex justify-center space-x-4">
+                    <Link to="/Signup" className="text-blue-600 cursor-pointer">
+                        Don't have an account?
+                    </Link>
+                    <span className="text-gray-600 hover:text-blue-600 cursor-pointer">
+                        Forgot Password
+                    </span>
+                </div>
+
             </div>
-            <nav className="col-span-2 md:flex md:justify-end">
-                <ul className="p-4 ml-2 space-y-20">
-                    <li className="text-gray-700 font-bold">
-                        {nav.map(user => (
-                            <Link
-                                key={user.id}
-                                to={`/${user.title}`}>
-                                <span
-                                    onClick={() => handleClick(user.title)}
-                                    className={`mt-12 px-4 flex justify-end border-r-4 border-red-600 ${activeLink === user.title ? "border-red-600" : "border-blue-600"}`}
-                                >
-                                    {user.title}
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 ml-5">
-                                        <path strokeLinecap="round" strokeLinejoin="round" d={user.logo} />
-                                    </svg>
-                                </span>
-                            </Link>
-                        ))}
-                    </li>
-                </ul>
-            </nav>
         </div>
-    );
+
+    )
 }

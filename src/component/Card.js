@@ -32,7 +32,7 @@ export default function Card(props) {
                     onMouseOut={zoomOut}    // Mouse hover out event for zoomOut on desktop
                     onTouchEnd={zoomOut}    // Touch event for zoomOut on mobile
                     style={imageStyle}
-                    src={props.src}
+                    src={process.env.PUBLIC_URL + '/' + props.src}
                     alt=""
                     className="w-full h-48 sm:h-48 object-cover"
                 />
